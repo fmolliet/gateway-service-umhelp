@@ -2,9 +2,13 @@ const {requestSvc} = require("../services/api")
 
 class RequestController {
     async price(req, res){
-        const response = await requestSvc.post("/prices", req.body
-                
-            );
+        let response= [];
+        try{
+            const response = await requestSvc.post("/prices", req.body);
+          } catch (err) {
+            return res.status(400).send({ error:  `${err}` })
+        }       
+            
         return res.status(200).json(response);
     }
 
