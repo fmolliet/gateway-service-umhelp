@@ -10,7 +10,7 @@ class RequestController {
 
     async createRequest(req, res){
         try{
-            const response = await requestSvc.post("/", req);
+            const response = await requestSvc.post("/", req.body);
             return res.status(200).json(response);
         } catch (err) {
             return res.status(400).send({ error:  `${err}` })
