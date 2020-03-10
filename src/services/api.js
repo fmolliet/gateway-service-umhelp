@@ -1,11 +1,11 @@
 const axios = require("axios");
 
 const requestSvc = axios.create({
-    baseURL: `http://${process.env.RQT_HOSTNAME}:${process.env.RQT_PORT}/requests`
+    baseURL: `http://localhost:3001/requests`
 });
 
 const discountSvc = axios.create({
-    baseURL: `http://${process.env.DSCT_HOSTNAME}:${process.env.DSCT_PORT}/discounts`
+    baseURL: `http://localhost:3002/discounts`
 });
 
 module.exports = {
