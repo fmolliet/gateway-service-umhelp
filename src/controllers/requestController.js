@@ -2,7 +2,7 @@ const {requestSvc} = require("../services/api")
 
 class RequestController {
     async price(req, res){
-        const response = await requestSvc.post("/prices", req
+        const response = await requestSvc.post("/prices", req.body
                 
             );
         return res.status(200).json(response);
